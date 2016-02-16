@@ -1,6 +1,6 @@
-source "http://rubygems.org"
+source 'https://rubygems.org'
 
-# Declare your gem's dependencies in faalis_blog.gemspec.
+# Declare your gem's dependencies in faalis_comments.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
 gemspec
@@ -10,19 +10,7 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-# To use debugger
-# gem 'debugger'
+# To use a debugger
+# gem 'byebug', group: [:development, :test]
 
-group :development do
-
-  gem 'faalis', :path => File.expand_path('../../Faalis/', __FILE__)
-  gem "pry"
-  gem "rspec-rails", "~> 3.0.0.beta"
-  gem "capybara"
-  gem "factory_girl_rails", "~> 4.0", require: false
-  gem "database_cleaner"
-  gem "email_spec"
-  gem "cucumber-rails", require: false
-  gem "json_spec", git: "git://github.com/Yellowen/json_spec.git"
-  gem "capybara-webkit"
-end
+gem 'faalis', path: '../Faalis', group: :development
