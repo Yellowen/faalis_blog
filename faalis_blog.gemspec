@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
 
   s.licenses = ['GPL-2']
   s.name        = 'faalis-blog'
-  s.version     = FaalisBlog::VERSION
+  s.version     = Faalis::Blog::VERSION
   s.authors     = ['Sameer Rahmani']
   s.email       = ['lxsameer@gnu.org']
   s.homepage    = "http://github.com/Yellowen/faalis_blog"
