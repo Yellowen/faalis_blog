@@ -1,2 +1,0 @@
-* Tasks
-** TODO change initializer to use rspec
