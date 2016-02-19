@@ -1,9 +1,8 @@
 PATH
   remote: .
   specs:
-    faalis-comments (0.2.0)
-      acts_as_commentable_with_threading
-      faalis (~> 2)
+    faalis-blog (0.2.0)
+      faalis (> 2)
 
 PATH
   remote: ../Faalis
@@ -71,10 +70,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    acts_as_commentable_with_threading (2.0.1)
-      activerecord (>= 4.0)
-      activesupport (>= 4.0)
-      awesome_nested_set (>= 3.0)
     admin_lte-rails (2.3.2.2)
       bootstrap-sass
       bootstrap3-datetimepicker-rails
@@ -95,8 +90,6 @@ GEM
     autoprefixer-rails (6.3.3)
       execjs
       json
-    awesome_nested_set (3.0.3)
-      activerecord (>= 4.0.0, < 5)
     bcrypt (3.1.10)
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
@@ -265,7 +258,7 @@ PLATFORMS
 
 DEPENDENCIES
   faalis!
-  faalis-comments!
+  faalis-blog!
   sqlite3
 
 BUNDLED WITH
