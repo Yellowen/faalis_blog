@@ -1,3 +1,0 @@
-class Faalis::Blog::Dashboard::PostsController < ::Dashboard::ApplicationController
-3
-end
