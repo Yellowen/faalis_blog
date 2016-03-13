@@ -3,5 +3,6 @@ module Faalis::Blog
     include ::Faalis::Concerns::Authorizable
     include ::SiteFramework::DomainAware
 
+    belongs_to :category
   end
 end

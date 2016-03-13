@@ -3,5 +3,6 @@ module Faalis::Blog
     include ::Faalis::Concerns::Authorizable
     include ::SiteFramework::DomainAware
 
+    has_many :posts
   end
 end
