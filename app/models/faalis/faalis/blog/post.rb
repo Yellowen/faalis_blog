@@ -1,4 +1,4 @@
 module Faalis::Blog
-  class Faalis::Blog::Post < ActiveRecord::Base
+  class Post < ActiveRecord::Base
   end
 end
