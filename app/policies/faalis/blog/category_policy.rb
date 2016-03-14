@@ -1,5 +1,5 @@
 module Faalis::Blog
-  class Blog::CategoryPolicy < ApplicationPolicy
+  class CategoryPolicy < ApplicationPolicy
     class Scope < Scope
       def resolve
         scope

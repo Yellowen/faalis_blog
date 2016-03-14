@@ -17,6 +17,6 @@ class CreateFaalisBlogPosts < ActiveRecord::Migration
       end
 
     add_index :faalis_blog_posts, :category_id
-    domain_awar :faalis_blog_posts
+    domain_aware :faalis_blog_posts
   end
 end
