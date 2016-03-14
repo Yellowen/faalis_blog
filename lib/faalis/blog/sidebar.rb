@@ -1,5 +1,5 @@
 class Faalis::Dashboard::Models::Sidebar
-  def page_entries
+  def blog_entries
     menu I18n.t('faalis.page.dashboard.blog'), icon: 'fa fa-globe' do
       item(I18n.t('faalis.page.dashboard.posts'),
         model: 'Faalis::Blog::Post',

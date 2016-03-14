@@ -6,3 +6,4 @@ module Faalis
 end
 
 require 'faalis/blog/engine'
+require 'faalis/blog/sidebar'
