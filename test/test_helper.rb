@@ -8,7 +8,7 @@ require "rails/test_help"
 require 'fabrication'
 
 Fabrication.configure do |config|
-  config.fabricator_path = 'test/fabricators/faalis'
+  config.fabricator_path = 'test/fabricators/faalis/blog/'
   config.path_prefix = Faalis::Blog::Engine.root
 end
 
