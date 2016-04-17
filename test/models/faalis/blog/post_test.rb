@@ -73,5 +73,13 @@ module Faalis::Blog
 
       assert_equal 3, result.count
     end
+
+    test 'renders the markdown and cache it to content field' do
+      subject = Fabricate(:post, category: @category, user: @user)
+
+      result = subject.content
+
+      assert_equal "<h1>test1</h1>\n", result
+    end
   end
 end

@@ -36,6 +36,7 @@ module Faalis::Blog
 
     validates_presence_of :title, :permalink
 
+
     private
 
     def render_content
