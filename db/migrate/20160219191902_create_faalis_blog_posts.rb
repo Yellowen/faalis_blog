@@ -2,6 +2,7 @@ class CreateFaalisBlogPosts < ActiveRecord::Migration
   def change
     create_table :faalis_blog_posts do |t|
       t.string :title
+      t.string :permalink
       t.text   :raw_content
       t.text   :content
       t.integer :category_id, null: false
