@@ -19,6 +19,10 @@ module Faalis::Blog
 
     has_many :posts
 
+    scope :published_posts, -> { posts.where(published: true) }
+
+    validates_presence_of :title, :permalink
+
     def name
       title
     end

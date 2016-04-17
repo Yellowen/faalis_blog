@@ -4,14 +4,15 @@
 #
 #  id               :integer          not null, primary key
 #  title            :string
+#  permalink        :string
 #  raw_content      :text
 #  content          :text
-#  category_id      :integer
+#  category_id      :integer          not null
 #  published        :boolean
-#  user_id          :integer
-#  views            :integer
-#  likes            :integer
-#  dislikes         :integer
+#  user_id          :integer          not null
+#  views            :integer          default(0)
+#  likes            :integer          default(0)
+#  dislikes         :integer          default(0)
 #  allow_comments   :boolean          default(TRUE)
 #  members_only     :boolean          default(FALSE)
 #  meta_title       :string
