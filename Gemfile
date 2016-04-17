@@ -55,4 +55,5 @@ group :development, :test do
   gem 'annotate'
   gem 'faker'
   gem 'jquery-turbolinks'
+  gem 'guard-cane'
 end
