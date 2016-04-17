@@ -1,4 +1,4 @@
-Fabricator :category, class_name: 'Faalis::Blog::Category' do
+Fabricator :post, class_name: 'Faalis::Blog::Post' do
   title 'category_1'
   raw_content '#test1'
   permalink 'category-1'
