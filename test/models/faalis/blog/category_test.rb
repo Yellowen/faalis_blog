@@ -17,6 +17,23 @@ require 'test_helper'
 module Faalis::Blog
   class CategoryTest < ActiveSupport::TestCase
 
+    @@subject = ::Faalis::Blog::Category
+
+    test "won't save without a title" do
+      subject = @@subject.new(permalink: 'category-1')
+
+      result = subject.save
+
+      assert_not result, msg: 'Category saved without a title.'
+    end
+
+    test "won't save without a permalink" do
+      subject = @@subject.new(title: 'category-1')
+
+      result = subject.save
+
+      assert_not result, msg: 'Category saved without a title.'
+    end
 
   end
 end

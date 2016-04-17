@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160417080519) do
 
   create_table "faalis_blog_posts", force: :cascade do |t|
     t.string   "title"
+    t.string   "permalink"
     t.text     "raw_content"
     t.text     "content"
     t.integer  "category_id",                      null: false

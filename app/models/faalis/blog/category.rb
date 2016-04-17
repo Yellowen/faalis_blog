@@ -21,6 +21,9 @@ module Faalis::Blog
 
     has_many :posts
 
+    validates_presence_of :title
+    validates_presence_of :permalink
+
     def name
       title
     end

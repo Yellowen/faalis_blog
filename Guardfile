@@ -19,7 +19,7 @@ group :test do
   guard(:minitest, all_on_start: false,
         all_after_pass: false, notification: true) do
 
-    #ENV["BACKTRACE"] = 'blegga'
+    ENV["BACKTRACE"] = 'blegga'
 
     # with Minitest::Unit
     watch(%r{^test/(.*)\/?test_(.*)\.rb$})

@@ -1,4 +1,5 @@
 require 'faalis'
+require 'redcarpet'
 
 module Faalis
   module Blog
