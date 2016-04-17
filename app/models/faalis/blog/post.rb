@@ -26,7 +26,23 @@ module Faalis::Blog
   class Post < ActiveRecord::Base
     include ::Faalis::Concerns::Authorizable
     include ::SiteFramework::DomainAware
+
+    before_save :render_content
+
     belongs_to :user, class_name: 'Faalis::User'
     belongs_to :category
+
+    scope :published, -> { where(published: true) }
+
+    validates_presence_of :title, :permalink
+
+    private
+
+    def render_content
+      unless raw_content.blank?
+        markdown = ::Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
+        self.content  = markdown.render(raw_content)
+      end
+    end
   end
 end

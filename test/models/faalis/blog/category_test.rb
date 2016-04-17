@@ -35,17 +35,5 @@ module Faalis::Blog
       assert_not result, msg: 'Category saved without a title.'
     end
 
-    describe 'published_posts' do
-      test 'will return the published posts belongs to current category' do
-        subject = Fabricate(:category)
-
-        3.times { Fabricate(:post, category: subject, published: true) }
-        Fabricate(:post, category: subject, published: false)
-
-        result = subject.published_posts
-
-        assert_equal 3, result.count
-      end
-    end
   end
 end
