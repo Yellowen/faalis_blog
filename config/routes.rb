@@ -1,11 +1,6 @@
 Faalis::Blog::Engine.routes.draw do
-  namespace :blog do
-  get 'posts/index'
-  end
 
-  namespace :blog do
-  get 'posts/show'
-  end
+  get "#{Faalis::Blog::Engine.index_url_prefix}", to: 'blog/posts#index', as: :index
 
   in_dashboard do
     resources :categories
