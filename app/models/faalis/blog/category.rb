@@ -17,6 +17,8 @@ module Faalis::Blog
     include ::Faalis::Concerns::Authorizable
     include ::SiteFramework::DomainAware
 
+    validates :permalink, uniqueness: true
+
     has_many :posts
 
     validates_presence_of :title
