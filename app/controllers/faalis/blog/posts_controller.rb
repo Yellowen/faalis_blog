@@ -1,7 +1,7 @@
 require_dependency "faalis/application_controller"
 
 module Faalis::Blog
-  class Blog::PostsController < ApplicationController
+  class PostsController < ::ApplicationController
 
     layout Engine.default_layout
 
