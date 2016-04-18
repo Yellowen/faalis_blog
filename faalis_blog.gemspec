@@ -22,4 +22,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'faalis', '> 2'
   s.add_dependency 'redcarpet'
   s.add_dependency 'site_framework'
+  s.add_dependency 'faalis-tags'
+
 end

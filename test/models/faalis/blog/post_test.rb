@@ -81,5 +81,17 @@ module Faalis::Blog
 
       assert_equal "<h1>test1</h1>\n", result
     end
+
+    test 'saves tags as well' do
+      subject = Fabricate(:post, category: @category, user: @user)
+      subject.tag_list = 'faalis, ruby'
+      subject.save
+
+      result = subject.tags
+
+      assert_equal 2,      result.length
+      assert_equal 'ruby', subject.tag_list[1]
+
+    end
   end
 end

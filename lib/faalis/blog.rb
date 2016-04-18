@@ -1,5 +1,6 @@
 require 'faalis'
 require 'redcarpet'
+require 'faalis/tags'
 
 module Faalis
   module Blog

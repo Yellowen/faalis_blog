@@ -27,12 +27,19 @@ module Faalis::Blog
     include ::Faalis::Concerns::Authorizable
     include ::SiteFramework::DomainAware
 
+    # adds tags field, tag_list params should be provided to initializer
+    # in order to save a post
+    acts_as_taggable
+
+    # Render the markdown and cache it to content field
     before_save :render_content
 
     belongs_to :user, class_name: 'Faalis::User'
     belongs_to :category
 
+    # Returns all the published posts
     scope :published, -> { where(published: true) }
+
 
     validates_presence_of :title, :permalink
 
