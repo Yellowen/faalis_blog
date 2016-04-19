@@ -2,6 +2,7 @@ require 'test_helper'
 
 module Faalis::Blog
   class PostsControllerTest < ::ActionController::TestCase
+    include Devise::TestHelpers
     tests ::Faalis::Blog::PostsController
 
     setup do
@@ -48,10 +49,22 @@ module Faalis::Blog
       assert_equal 8, assigns(:posts).length
     end
 
+    test "returns only published posts with private posts if user was logged in" do
+      sign_in(@user)
+
+      get :index
+
+      assert_response :success
+      assert_not_nil :posts
+      assert_equal 10, assigns(:posts).length
+    end
+
+
     test "should get show" do
       get :show
       assert_response :success
     end
+
 
   end
 end
