@@ -7,8 +7,8 @@ module Faalis::Blog
 
     setup do
       @routes = Engine.routes
-      @user   = Fabricate(:user, password: '111111',
-        password_confirmation: '111111')
+      @user   = Fabricate(:user, password: '11111111',
+        password_confirmation: '11111111')
       @category1 = Fabricate(:category, title: 'ex1', permalink: 'ex-1')
       @category2 = Fabricate(:category, title: 'ex2', permalink: 'ex-2', members_only: true)
 

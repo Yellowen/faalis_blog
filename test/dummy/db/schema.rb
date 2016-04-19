@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419113732) do
+ActiveRecord::Schema.define(version: 20160419114006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,6 +134,25 @@ ActiveRecord::Schema.define(version: 20160419113732) do
   add_index "faalis_users", ["email"], name: "index_faalis_users_on_email", unique: true, using: :btree
   add_index "faalis_users", ["reset_password_token"], name: "index_faalis_users_on_reset_password_token", unique: true, using: :btree
   add_index "faalis_users", ["unlock_token"], name: "index_faalis_users_on_unlock_token", unique: true, using: :btree
+
+  create_table "site_framework_domains", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "site_id"
+    t.integer  "parent_id"
+    t.boolean  "alias",      default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "site_framework_domains", ["name"], name: "index_site_framework_domains_on_name", unique: true, using: :btree
+
+  create_table "site_framework_sites", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "default_template", default: ""
+  end
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
