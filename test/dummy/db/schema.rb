@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160418092438) do
+ActiveRecord::Schema.define(version: 20160419113732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "application_models", force: :cascade do |t|
+    t.string   "model"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "faalis_blog_categories", force: :cascade do |t|
     t.string   "title"
@@ -34,9 +40,6 @@ ActiveRecord::Schema.define(version: 20160418092438) do
     t.integer  "category_id",                      null: false
     t.boolean  "published"
     t.integer  "user_id",                          null: false
-    t.integer  "views",            default: 0
-    t.integer  "likes",            default: 0
-    t.integer  "dislikes",         default: 0
     t.boolean  "allow_comments",   default: true
     t.boolean  "members_only",     default: false
     t.string   "meta_title"

@@ -2,7 +2,7 @@ class Faalis::Blog::Dashboard::PostsController < ::Dashboard::ApplicationControl
   engine 'Faalis::Blog::Engine'
 
   in_form do |f|
-    f.attributes except: [:user, :likes, :views, :dislikes]
+    f.attributes except: [ :user ]
   end
 
   private
