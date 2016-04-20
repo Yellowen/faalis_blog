@@ -33,6 +33,8 @@ module Faalis::Blog
       Fabricate(:post, user: @user, category: @category2,
         published: false, members_only: false)
 
+      Faalis::Engine.amd = false
+
     end
 
 
@@ -58,7 +60,6 @@ module Faalis::Blog
       assert_not_nil :posts
       assert_equal 10, assigns(:posts).length
     end
-
 
     test "should get show" do
       get :show
