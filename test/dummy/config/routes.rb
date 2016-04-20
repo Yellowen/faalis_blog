@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'welcome/index'
+
   mount Faalis::Engine => '/'
 
   api_routes do
@@ -11,4 +13,6 @@ Rails.application.routes.draw do
   end
 
   mount Faalis::Blog::Engine => "/"
+
+  root 'welcome#index'
 end
