@@ -41,7 +41,7 @@ module Faalis::Blog
     scope :published, -> { where(published: true) }
 
 
-    validates_presence_of :title, :permalink
+    validates_presence_of :title, :permalink, :user, :category
 
 
     private
