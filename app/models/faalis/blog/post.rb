@@ -35,13 +35,14 @@ module Faalis::Blog
     before_save :render_content
 
     belongs_to :user, class_name: 'Faalis::User'
-    belongs_to :category
+    belongs_to :category, class_name: 'Faalis::Blog::Category'
 
     # Returns all the published posts
     scope :published, -> { where(published: true) }
+    scope :ordered, -> { order('created_at DESC') }
 
 
-    validates_presence_of :title, :permalink
+    validates_presence_of :title, :permalink, :user, :category
 
 
     private

@@ -6,8 +6,8 @@ module Faalis::Blog
     @@subject = ::Faalis::Blog::Post
 
     before do
-      @user     = Fabricate(:user, password: '111111',
-                            password_confirmation: '111111')
+      @user     = Fabricate(:user, password: '11111111',
+                            password_confirmation: '11111111')
       @category = Fabricate(:category)
     end
 

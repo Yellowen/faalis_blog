@@ -1,4 +1,2 @@
-module Faalis::Blog
-  module Blog::PostsHelper
-  end
+module Faalis::Blog::PostsHelper
 end

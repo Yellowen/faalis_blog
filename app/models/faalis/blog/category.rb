@@ -19,7 +19,7 @@ module Faalis::Blog
 
     validates :permalink, uniqueness: true
 
-    has_many :posts
+    has_many :posts, class_name: 'Faalis::Blog::Post'
 
     validates_presence_of :title
     validates_presence_of :permalink

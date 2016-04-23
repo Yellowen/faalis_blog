@@ -1,3 +1,4 @@
+# This migration comes from faalis_blog (originally 20160216115103)
 class ActsAsCommentableWithThreadingMigration < ActiveRecord::Migration
   def self.up
     create_table :faalis_comments, :force => true do |t|

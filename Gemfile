@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 source 'http://rails-assets.org' do
   gem 'rails-assets-bootstrap-treeview'
+
   group :development, :test do
     gem 'rails-assets-bootstrap-rtl'
     gem 'rails-assets-jquery-knob'
