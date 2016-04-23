@@ -38,8 +38,8 @@ module Faalis::Blog
     belongs_to :category, class_name: 'Faalis::Blog::Category'
 
     # Returns all the published posts
-    scope :published, -> { where(published: true) }
-    scope :ordered, -> { order('created_at DESC') }
+     scope :published, -> { where(published: true) }
+     scope :ordered, -> { order('created_at DESC') }
 
 
     validates_presence_of :title, :permalink, :user, :category
