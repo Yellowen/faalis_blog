@@ -34,9 +34,6 @@ ActiveRecord::Schema.define(version: 20160418092438) do
     t.integer  "category_id",                      null: false
     t.boolean  "published"
     t.integer  "user_id",                          null: false
-    t.integer  "views",            default: 0
-    t.integer  "likes",            default: 0
-    t.integer  "dislikes",         default: 0
     t.boolean  "allow_comments",   default: true
     t.boolean  "members_only",     default: false
     t.string   "meta_title"
