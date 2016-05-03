@@ -25,7 +25,7 @@
 module Faalis::Blog
   class Post < ActiveRecord::Base
     include ::Faalis::Concerns::Authorizable
-    include ::SiteFramework::DomainAware
+    include ::SiteFramework::SiteAware
 
     # adds tags field, tag_list params should be provided to initializer
     # in order to save a post

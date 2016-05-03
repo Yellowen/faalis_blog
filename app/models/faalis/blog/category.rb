@@ -15,7 +15,7 @@
 module Faalis::Blog
   class Category < ActiveRecord::Base
     include ::Faalis::Concerns::Authorizable
-    include ::SiteFramework::DomainAware
+    include ::SiteFramework::SiteAware
 
     validates :permalink, uniqueness: true
 
