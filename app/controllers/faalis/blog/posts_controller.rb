@@ -10,7 +10,8 @@ module Faalis::Blog
     end
 
     def show
-      @posts = Post.find_by(permalink: params[:permalink], published: true)
+      @post = Post.published.find_by(permalink: params[:permalink])
+
     end
   end
 end

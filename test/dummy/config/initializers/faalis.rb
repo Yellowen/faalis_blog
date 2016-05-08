@@ -9,4 +9,5 @@ Faalis::Engine.setup do |config|
   config.slug = 'Slug'
   # Url prefix for dashboard section. default is '/dashboard'
   # config.dashboard_namespace = :dashboard
+  config.amd = false
 end
