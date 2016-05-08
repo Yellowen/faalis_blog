@@ -29,8 +29,10 @@ ActiveRecord::Schema.define(version: 20160419114006) do
     t.boolean  "members_only", default: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.integer  "domain_id"
+    t.integer  "site_id"
   end
+
+  add_index "faalis_blog_categories", ["site_id"], name: "index_faalis_blog_categories_on_site_id", using: :btree
 
   create_table "faalis_blog_posts", force: :cascade do |t|
     t.string   "title"
@@ -46,10 +48,11 @@ ActiveRecord::Schema.define(version: 20160419114006) do
     t.string   "meta_description"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
-    t.integer  "domain_id"
+    t.integer  "site_id"
   end
 
   add_index "faalis_blog_posts", ["category_id"], name: "index_faalis_blog_posts_on_category_id", using: :btree
+  add_index "faalis_blog_posts", ["site_id"], name: "index_faalis_blog_posts_on_site_id", using: :btree
 
   create_table "faalis_comments", force: :cascade do |t|
     t.integer  "commentable_id"
