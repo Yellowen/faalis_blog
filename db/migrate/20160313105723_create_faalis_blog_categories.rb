@@ -1,6 +1,9 @@
 class CreateFaalisBlogCategories < ActiveRecord::Migration
   def change
-    create_table :faalis_blog_categories do |t|
+    args = {}
+    args[:id] = :uuid if Faalis::Engine.use_uuid
+
+    create_table :faalis_blog_categories, **args do |t|
       t.string :title
       t.text :description
       t.string :permalink
