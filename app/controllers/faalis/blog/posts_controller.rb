@@ -6,7 +6,7 @@ module Faalis::Blog
     layout Engine.default_layout
 
     def index
-      @posts = Post.published.ordered.page params[:page]
+      @posts = Post.published.ordered.page(params[:page]).per(5)
     end
 
     def show
