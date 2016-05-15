@@ -30,7 +30,7 @@ module Faalis::Blog
     # adds tags field, tag_list params should be provided to initializer
     # in order to save a post
     acts_as_taggable
-
+    acts_as_commentable
     # Render the markdown and cache it to content field
     before_save :render_content
 
