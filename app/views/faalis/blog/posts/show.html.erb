@@ -1,2 +1,19 @@
-<h1>Blog::Posts#show</h1>
-<p>Find me in app/views/faalis/blog/posts/show.html.erb</p>
+<section id="post" class="post">
+  <arcile class="post">
+
+    <h1 class="post_title">
+      <%= @post.title %>
+    </h1>
+
+    <div class="post content">
+      <%= @post.contet.html_safe%>
+    </div>
+
+  </arcile>
+  <%= form_for @new_comment do |f| %>
+    <%= f.label :body, 'Your Commnet' %>
+    <%= f.text_area :body %><br />
+    <%= f.submit 'Post' %>
+  <% end  %>
+
+</section>
