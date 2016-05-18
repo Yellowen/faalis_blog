@@ -10,10 +10,10 @@
     </div>
 
   </arcile>
-  <%= form_for @new_comment do |f| %>
-    <%= f.label :body, 'Your Commnet' %>
-    <%= f.text_area :body %><br />
-    <%= f.submit 'Post' %>
+  <% form_new_comment :action => 'add_comment' %>
+    <%= %>
+    <%= text_field 'comment', 'message' %><br>
+    <%= submit 'Post' %>
   <% end  %>
 
 </section>

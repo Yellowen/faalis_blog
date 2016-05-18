@@ -21,7 +21,11 @@ module Faalis::Blog
         @post = posts.where(members_only: false) \
                 .find_by(permalink: params[:permalink])
       end
+    end
+
+    def create
 
     end
+
   end
 end
