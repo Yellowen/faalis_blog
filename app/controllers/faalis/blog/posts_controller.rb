@@ -24,6 +24,7 @@ module Faalis::Blog
     end
 
     def create
+      @comment = commentable.comments.create
 
     end
 
