@@ -5,15 +5,25 @@
       <%= @post.title %>
     </h1>
     <div class="post content">
-      <%= @post.contet.html_safe%>
+      <%= @post.content.html_safe%>
     </div>
   </arcile>
+  <% @comments.each do |comment| %>
+    <article>
+      <h3>
+        <%= comment.title %>
+      </h3>
+      <p>
+        <%= comment.body %>
+      </p>
+    </article>
+  <% end%>
 
   <comment-form>
     <%= form_for @post.comments.new url: {action: "add_comment"} do |f| %>
-      Title: <%=  f.text_field :new_comment_title%><br>
-      Comment: <%= f.text_area :new_comment_body %><br>
-      <%= f.submit 'Add Comment' %>
+      Title: <%=  f.text_field :comment[title] %><br>
+      Comment: <%= f.text_area :comment[comment] %><br>
+      <%= submit_tag 'Add Comment', :class => "submit" %>
     <% end  %>
   </comment-form>
 

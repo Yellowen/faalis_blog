@@ -27,10 +27,11 @@ module Faalis::Blog
     include ::Faalis::Concerns::Authorizable
     include ::SiteFramework::SiteAware
 
+    delegate :name, to: :category, prefix: true
     # adds tags field, tag_list params should be provided to initializer
     # in order to save a post
     acts_as_taggable
-    acts_as_commentable class_name: 'PostComment'
+    acts_as_commentable({ class_name: 'Faalis::Comments::Comment' })
     # Render the markdown and cache it to content field
     before_save :render_content
 

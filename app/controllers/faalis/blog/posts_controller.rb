@@ -14,6 +14,10 @@ module Faalis::Blog
     def show
       posts = Post.published
 
+      puts "<<<<<<<<<< " * 100, SiteFramework.current_site.id
+      @post = posts.find_by(permalink: params[:permalink])
+      return
+
       if user_signed_in?
         @post = posts.find_by(permalink: params[:permalink])
 
@@ -21,6 +25,10 @@ module Faalis::Blog
         @post = posts.where(members_only: false) \
                 .find_by(permalink: params[:permalink])
       end
+
+      # TODO: redirect to 404 page or show a message indicating
+      # that the post you're looking for does not exists
+      @comments = @post.comments.punlished.ordered
     end
 
     def create
