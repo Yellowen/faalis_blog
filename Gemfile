@@ -58,4 +58,5 @@ group :development, :test do
   gem 'jquery-turbolinks'
   gem 'guard-cane'
   gem 'faalis-tags', path: '../faalis_tags'
+  gem 'faalis-comments', path: '../faalis_comments'
 end

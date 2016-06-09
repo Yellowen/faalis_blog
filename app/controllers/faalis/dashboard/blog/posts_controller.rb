@@ -1,13 +1,13 @@
-class Faalis::Blog::Dashboard::PostsController < ::Dashboard::ApplicationController
+class Faalis::Dashboard::Blog::PostsController < ::Dashboard::ApplicationController
   engine 'Faalis::Blog::Engine'
 
   in_index do |f|
-    f.attributes(:title, :permalink, :category, :domain, :members_only, :allow_comments)
+    f.attributes(:title, :permalink, :category_name, :site, :members_only, :allow_comments)
   end
 
   in_form do |f|
     f.attributes(:title, :permalink, :meta_title, :meta_description,
-                 :category, :domain, :raw_content, :tags,
+                 :category, :site, :raw_content, :tags,
                  :members_only, :allow_comments)
 
     f.attributes_properties tags: { input_html: { :class => 'multiple select' } }
@@ -15,7 +15,8 @@ class Faalis::Blog::Dashboard::PostsController < ::Dashboard::ApplicationControl
 
   private
 
-  def create_hook(resource)
+  def before_create_hook(resource)
     resource.user = current_user
+    resource.site = SiteFramework.current_site
   end
 end
